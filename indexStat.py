@@ -252,29 +252,26 @@ def main(enveloppe):
                 # --- Optimiste
                 final_opt = scenarios['optimiste'][-1]
                 diff_opt = last_price - final_opt
-                if diff_opt > 0:
-                    print(f"Scénario optimiste: tombe à {final_opt:.6f} (J+10) -> baisse de ~{diff_opt:.6f}")
-                else:
-                    hausse_opt = abs(diff_opt)
-                    print(f"Scénario optimiste: monte à {final_opt:.6f} (J+10) -> hausse de ~{hausse_opt:.6f}")
+                if diff_opt < 0:  # Si le prix final est plus bas que le prix de départ
+                    print(f"Scénario optimiste : tombe à {final_opt:.6f} (J+10) -> baisse de ~{abs(diff_opt):.6f}")
+                else:  # Si le prix final est plus haut que le prix de départ
+                    print(f"Scénario optimiste : monte à {final_opt:.6f} (J+10) -> hausse de ~{diff_opt:.6f}")
 
                 # --- Neutre
                 final_neutre = scenarios['neutre'][-1]
                 diff_neutre = last_price - final_neutre
-                if diff_neutre > 0:
-                    print(f"Scénario neutre   : tombe à {final_neutre:.6f} (J+10) -> baisse de ~{diff_neutre:.6f}")
+                if diff_neutre < 0:
+                    print(f"Scénario neutre : tombe à {final_neutre:.6f} (J+10) -> baisse de ~{abs(diff_neutre):.6f}")
                 else:
-                    hausse_neutre = abs(diff_neutre)
-                    print(f"Scénario neutre   : monte à {final_neutre:.6f} (J+10) -> hausse de ~{hausse_neutre:.6f}")
+                    print(f"Scénario neutre : monte à {final_neutre:.6f} (J+10) -> hausse de ~{diff_neutre:.6f}")
 
                 # --- Pessimiste
                 final_pess = scenarios['pessimiste'][-1]
                 diff_pess = last_price - final_pess
-                if diff_pess > 0:
-                    print(f"Scénario pessimist: tombe à {final_pess:.6f} (J+10) -> baisse de ~{diff_pess:.6f}")
+                if diff_pess < 0:
+                    print(f"Scénario pessimist : tombe à {final_pess:.6f} (J+10) -> baisse de ~{abs(diff_pess):.6f}")
                 else:
-                    hausse_pess = abs(diff_pess)
-                    print(f"Scénario pessimist: monte à {final_pess:.6f} (J+10) -> hausse de ~{hausse_pess:.6f}")
+                    print(f"Scénario pessimist : monte à {final_pess:.6f} (J+10) -> hausse de ~{diff_pess:.6f}")
             else:
                 print("Impossible de générer les scénarios (pas assez de données).")
 
