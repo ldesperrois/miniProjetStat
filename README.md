@@ -4,7 +4,8 @@
 Yanis Ponthou & Lucas Desperrois
 
 ## Description
-Ce programme analyse la volatilité des cryptomonnaies en utilisant les données historiques de prix de clôture. Il calcule les statistiques de volatilité, identifie les périodes de forte volatilité, et trace des graphiques pour visualiser les résultats. Une stratégie d'achat/vente basée sur la volatilité est également implémentée pour estimer les gains potentiels avec une enveloppe donné
+Ce programme analyse la volatilité des cryptomonnaies en utilisant les données historiques de prix de clôture. Il calcule les statistiques de volatilité, identifie les périodes de forte volatilité, et trace des graphiques pour visualiser les résultats. Une stratégie d'achat/vente basée sur la volatilité est également implémentée pour estimer les gains potentiels avec une enveloppe donné. Il y à également un module qui permets de faire 
+des projections sur les 10 jours qui suivent (optimiste, neutre, péssimite)
 
 ## Fonctionnalités
 - Lecture des données historiques de prix de clôture à partir de fichiers CSV.
@@ -15,6 +16,7 @@ Ce programme analyse la volatilité des cryptomonnaies en utilisant les données
   - Les prix de clôture avec les moyennes mobiles exponentielles.
   - La volatilité avec indication des périodes de forte volatilité.
 - Implémentation d'une stratégie d'achat/vente basée sur la volatilité pour estimer les gains potentiels.
+- Projections de scénarios 
 
 ## Dépendances
 Le programme nécessite les librairies suivantes :
